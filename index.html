@@ -12,11 +12,12 @@
   </head>
   <body>
     <canvas id="matrix" aria-hidden="true"></canvas>
+    <canvas id="cyberspace" aria-hidden="true"></canvas>
     <div class="scanline" aria-hidden="true"></div>
 
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Karan Bhateja home">
-        <span class="brand-mark">kb</span>
+        <span class="brand-mark">bt5</span>
         <span>Karan Bhateja</span>
       </a>
       <nav class="nav" aria-label="Main navigation">
@@ -30,7 +31,7 @@
     <main id="top">
       <section class="hero panel" data-depth="0.12">
         <div class="hero-copy">
-          <p class="kicker">BackTrack-inspired security lab</p>
+          <p class="kicker">BackTrack 5 terminal portfolio</p>
           <h1>Karan Bhateja</h1>
           <p class="role">Cybersecurity Enthusiast | Security Automation Developer | Python Developer</p>
           <p class="intro">
@@ -55,18 +56,23 @@
             <span></span>
             <span></span>
           </div>
-          <div class="terminal">
+          <div class="terminal" id="terminalWindow">
             <div class="terminal-bar">
               <span></span>
               <span></span>
               <span></span>
               <strong>root@backtrack:~</strong>
             </div>
-            <div class="terminal-lines" id="terminalLines" aria-live="polite">
-              <p><b>$</b> ./urlhunter --crawl target.local</p>
-              <p><b>$</b> nmap -sV --script vuln 10.10.10.0/24</p>
-              <p><b>$</b> python3 recon_ai_summary.py</p>
-              <p><b>status</b> attack surface mapped</p>
+            <div class="terminal-screen" id="terminalScreen" aria-live="polite">
+              <div class="terminal-lines" id="terminalLines">
+                <p><b>BackTrack 5 R3</b> interactive portfolio shell loaded.</p>
+                <p><b>hint</b> type <span>help</span>, <span>projects</span>, <span>skills</span>, <span>contact</span>, or <span>clear</span></p>
+              </div>
+              <form class="terminal-form" id="terminalForm" autocomplete="off">
+                <label class="sr-only" for="terminalInput">Terminal command</label>
+                <span class="prompt">root@bt:~#</span>
+                <input id="terminalInput" name="command" spellcheck="false" autofocus>
+              </form>
             </div>
           </div>
         </div>
