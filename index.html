@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Karan Bhateja - Cybersecurity portfolio for security automation, reconnaissance, and Python tooling.">
+    <title>Karan Bhateja | Cybersecurity Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <canvas id="matrix" aria-hidden="true"></canvas>
+    <div class="scanline" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Karan Bhateja home">
+        <span class="brand-mark">kb</span>
+        <span>Karan Bhateja</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#lab">Lab</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero panel" data-depth="0.12">
+        <div class="hero-copy">
+          <p class="kicker">BackTrack-inspired security lab</p>
+          <h1>Karan Bhateja</h1>
+          <p class="role">Cybersecurity Enthusiast | Security Automation Developer | Python Developer</p>
+          <p class="intro">
+            I build practical offensive-security tools and automation scripts for reconnaissance,
+            vulnerability discovery, and cleaner real-world security workflows.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://github.com/Karanbhateja" target="_blank" rel="noreferrer">
+              <span aria-hidden="true">⌘</span>
+              GitHub
+            </a>
+            <a class="button" href="mailto:karanbhatejaa@protonmail.com">
+              <span aria-hidden="true">@</span>
+              Email
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Interactive cyber terminal">
+          <div class="orbit" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="terminal">
+            <div class="terminal-bar">
+              <span></span>
+              <span></span>
+              <span></span>
+              <strong>root@backtrack:~</strong>
+            </div>
+            <div class="terminal-lines" id="terminalLines" aria-live="polite">
+              <p><b>$</b> ./urlhunter --crawl target.local</p>
+              <p><b>$</b> nmap -sV --script vuln 10.10.10.0/24</p>
+              <p><b>$</b> python3 recon_ai_summary.py</p>
+              <p><b>status</b> attack surface mapped</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about band">
+        <div class="section-heading">
+          <p class="kicker">Operator profile</p>
+          <h2>Security automation with a practical bias.</h2>
+        </div>
+        <p>
+          My work focuses on scripts and tools that reduce manual effort during testing:
+          reconnaissance, enumeration, vulnerability context, report generation, and
+          workflow glue for Linux-based security environments.
+        </p>
+      </section>
+
+      <section id="skills" class="band">
+        <div class="section-heading">
+          <p class="kicker">Toolchain</p>
+          <h2>Skills mapped by mission.</h2>
+        </div>
+        <div class="skill-grid">
+          <article class="tilt-card">
+            <h3>Languages</h3>
+            <ul>
+              <li>Python</li>
+              <li>Bash</li>
+              <li>C</li>
+              <li>JavaScript Basics</li>
+            </ul>
+          </article>
+          <article class="tilt-card">
+            <h3>Tools</h3>
+            <ul>
+              <li>Burp Suite</li>
+              <li>Nmap</li>
+              <li>Wireshark</li>
+              <li>Metasploit</li>
+              <li>Git & GitHub</li>
+              <li>Linux Kali / Ubuntu</li>
+            </ul>
+          </article>
+          <article class="tilt-card">
+            <h3>Domains</h3>
+            <ul>
+              <li>Web Security</li>
+              <li>Recon & Enumeration</li>
+              <li>Automation in Pentesting</li>
+              <li>Script Development</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <div class="section-heading">
+          <p class="kicker">Selected builds</p>
+          <h2>Recon, scanning, and payload testing tools.</h2>
+        </div>
+
+        <div class="project-stack">
+          <article class="project-card reveal">
+            <div class="project-index">01</div>
+            <div>
+              <h3>URLHunter</h3>
+              <p>
+                Web reconnaissance tool for extracting and analyzing URLs to identify hidden
+                endpoints and attack surface.
+              </p>
+              <a href="https://github.com/Karanbhateja/URLHunter" target="_blank" rel="noreferrer">View repository</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-index">02</div>
+            <div>
+              <h3>Internal Network Scanning Tool</h3>
+              <p>
+                ISO 27001-focused scanner using Nmap for host discovery, service detection,
+                CVE enrichment from NVD, SQLite caching, threaded scans, and CVSS severity reports.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-index">03</div>
+            <div>
+              <h3>Website Reconnaissance Tool</h3>
+              <p>
+                Modular passive intelligence framework with 12+ scripts for DNS, subdomains,
+                metadata, email harvesting, Shodan, Censys, and LM Studio summaries.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-index">04</div>
+            <div>
+              <h3>Security Header Analyzer</h3>
+              <p>
+                HTTP header assessment utility for missing or weak CSP, HSTS,
+                X-Frame-Options, and other web security controls.
+              </p>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-index">05</div>
+            <div>
+              <h3>WinHunter</h3>
+              <p>
+                Windows payload generation tool for controlled testing labs, reverse shell
+                variations, antivirus detection checks, and endpoint security validation.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="lab" class="lab band">
+        <div class="section-heading">
+          <p class="kicker">Interactive lab</p>
+          <h2>Explore the workflow map.</h2>
+        </div>
+        <div class="lab-layout">
+          <div class="radar" aria-label="Animated reconnaissance workflow map">
+            <button class="node active" style="--x: 50%; --y: 13%;" data-node="Recon">Recon</button>
+            <button class="node" style="--x: 82%; --y: 39%;" data-node="Enumerate">Enumerate</button>
+            <button class="node" style="--x: 70%; --y: 78%;" data-node="Analyze">Analyze</button>
+            <button class="node" style="--x: 27%; --y: 78%;" data-node="Report">Report</button>
+            <button class="node" style="--x: 17%; --y: 39%;" data-node="Automate">Automate</button>
+          </div>
+          <div class="lab-output">
+            <p class="kicker">Selected phase</p>
+            <h3 id="nodeTitle">Recon</h3>
+            <p id="nodeText">
+              Collect target URLs, DNS records, metadata, subdomains, and public intelligence
+              before active testing begins.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="categories band">
+        <div class="section-heading">
+          <p class="kicker">Project categories</p>
+          <h2>Built for repeatable security work.</h2>
+        </div>
+        <div class="category-strip">
+          <span>Security Tools</span>
+          <span>Automation Scripts</span>
+          <span>Recon & Enumeration</span>
+          <span>System Utilities</span>
+          <span>Experimental Learning</span>
+        </div>
+      </section>
+
+      <section id="contact" class="contact panel" data-depth="0.08">
+        <div>
+          <p class="kicker">Contact</p>
+          <h2>Open to security tooling, automation, and hands-on learning opportunities.</h2>
+        </div>
+        <div class="contact-links">
+          <a href="mailto:karanbhatejaa@protonmail.com">karanbhatejaa@protonmail.com</a>
+          <a href="https://github.com/Karanbhateja" target="_blank" rel="noreferrer">github.com/Karanbhateja</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
