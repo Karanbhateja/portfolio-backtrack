@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>root@bt:~# — Karan Bhateja</title>
+  <meta name="description" content="Karan Bhateja — Cybersecurity Engineer. Offensive testing, ISO 27001, security automation." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔴</text></svg>" />
+</head>
+<body>
+
+<!-- Overlays -->
+<canvas id="matrixCanvas" aria-hidden="true"></canvas>
+<div id="scanLines"     aria-hidden="true"></div>
+<div id="vignette"      aria-hidden="true"></div>
+<div id="spotlight"     aria-hidden="true"></div>
+<div id="scrollProgress" aria-hidden="true"></div>
+
+<!-- Custom Cursor -->
+<div id="cursorOuter" aria-hidden="true"></div>
+<div id="cursorDot"   aria-hidden="true"></div>
+
+<!-- ─── BT5 Top Panel ───────────────────────────────────────────────────────── -->
+<div class="bt-panel" id="btPanel">
+  <div class="panel-left">
+    <a href="#home" class="panel-logo" aria-label="Home">[BT5]<span class="panel-logo-cursor">_</span></a>
+    <div class="panel-nav">
+      <a href="#about"    class="panel-link">About</a>
+      <a href="#skills"   class="panel-link">Skills</a>
+      <a href="#projects" class="panel-link">Projects</a>
+      <a href="#contact"  class="panel-link">Contact</a>
+    </div>
+  </div>
+  <div class="panel-right">
+    <button class="panel-term-btn launch-terminal">&gt;_ Terminal</button>
+    <span class="panel-sep">|</span>
+    <span class="panel-user">root@bt</span>
+    <span class="panel-sep">|</span>
+    <span class="panel-clock" id="panelClock">00:00:00</span>
+  </div>
+  <button class="panel-burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about"    class="mn-link">About</a>
+  <a href="#skills"   class="mn-link">Skills</a>
+  <a href="#projects" class="mn-link">Projects</a>
+  <a href="#contact"  class="mn-link">Contact</a>
+  <button class="mn-term launch-terminal">&gt;_ Terminal</button>
+</div>
+
+<!-- ─── Hero ─────────────────────────────────────────────────────────────────── -->
+<section class="s-hero" id="home">
+
+  <!-- Left: Boot terminal -->
+  <div class="boot-panel" id="heroTerminal">
+    <div class="boot-bar">
+      <div class="boot-dots">
+        <span class="bd dot-r"></span>
+        <span class="bd dot-y"></span>
+        <span class="bd dot-g"></span>
+      </div>
+      <span class="boot-title">root@bt — bash — 80×24</span>
+    </div>
+    <div class="boot-body" id="htBody"></div>
+  </div>
+
+  <!-- Right: Identity card -->
+  <div class="id-card">
+    <div class="id-card-bar">
+      <div class="idb-dots">
+        <span class="bd dot-r"></span>
+        <span class="bd dot-y"></span>
+        <span class="bd dot-g"></span>
+      </div>
+      <span class="idb-title">/root/profile — identity</span>
+    </div>
+    <div class="id-body">
+      <div class="id-badge">
+        <span class="id-badge-dot"></span>
+        [+] AVAILABLE FOR ENGAGEMENTS
+      </div>
+
+      <h1 class="id-name glitch" data-text="Karan Bhateja">
+        <span class="id-name-fire">Karan</span>
+        <span class="id-name-white">Bhateja</span>
+      </h1>
+
+      <div class="id-role">&gt;&nbsp;<span id="typewriter"></span><span class="cursor-typer"></span></div>
+
+      <p class="id-desc">
+        Cybersecurity professional building practical security tools,
+        automation workflows, and real-world defensive solutions.
+        From network scanners to ISO 27001 automation.
+      </p>
+
+      <div class="id-btns">
+        <a href="#projects" class="bt-btn bt-btn-primary">
+          <span class="bbr">[</span>exploit<span class="bbr">]</span> View Projects
+        </a>
+        <button class="bt-btn bt-btn-outline launch-terminal">
+          <span class="bbr">[</span>shell<span class="bbr">]</span> Terminal
+        </button>
+        <a href="https://github.com/karanbhateja" target="_blank" rel="noopener" class="bt-btn bt-btn-ghost">
+          <span class="bbr">[</span>git<span class="bbr">]</span> GitHub
+        </a>
+      </div>
+
+      <div class="id-stats">
+        <div class="id-stat">
+          <span class="ids-val" data-count="4" data-suffix="+">4+</span>
+          <span class="ids-label">Projects</span>
+        </div>
+        <div class="id-stat">
+          <span class="ids-val">ISO</span>
+          <span class="ids-label">27001</span>
+        </div>
+        <div class="id-stat">
+          <span class="ids-val" data-count="5" data-suffix="+">5+</span>
+          <span class="ids-label">Platforms</span>
+        </div>
+        <div class="id-stat">
+          <span class="ids-val">root</span>
+          <span class="ids-label">privilege</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#about" class="scroll-hint" aria-label="Scroll down">
+    <span>scroll</span>
+    <span class="sh-arrow">↓</span>
+  </a>
+</section>
+
+<!-- ─── About ─────────────────────────────────────────────────────────────────── -->
+<section class="s-section" id="about">
+  <div class="container">
+
+    <div class="sec-head" data-scroll="section">
+      <div class="sh-tag">[*] scan_01 ——————————————————————</div>
+      <h2 class="sh-cmd">whoami<span class="sh-cur">_</span></h2>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="win-panel" data-scroll="text-left">
+        <div class="win-bar">
+          <div class="win-dots">
+            <span class="bd dot-r"></span><span class="bd dot-y"></span><span class="bd dot-g"></span>
+          </div>
+          <span class="win-title">cat /root/bio.txt</span>
+        </div>
+        <div class="win-body">
+          <div class="win-prompt-line">
+            <span class="wp">root@bt:~#</span>
+            <span class="wc">cat /root/bio.txt</span>
+          </div>
+          <div class="win-output">
+            <p>I'm a <span class="bt-hl">cybersecurity professional</span> focused on building
+            practical security tools, automation workflows, and real-world
+            defensive solutions. I work across offensive testing, internal
+            audits, and infrastructure hardening — with a strong focus on
+            scripting and automation.</p>
+            <br/>
+            <p>I enjoy building tools that solve real problems — from
+            <span class="bt-hl">network scanners</span> and ISO 27001 automation to
+            <span class="bt-hl">secure licensing systems</span> and lightweight security
+            infrastructure using Linux and Raspberry Pi.</p>
+            <br/>
+            <p>Every tool I build should be deployable, documented, and
+            actually useful in a real security environment.</p>
+          </div>
+          <div class="win-prompt-line win-prompt-end">
+            <span class="wp">root@bt:~#</span>
+            <span class="win-blink">_</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sysinfo-panel" data-scroll="text-right">
+        <div class="win-bar">
+          <div class="win-dots">
+            <span class="bd dot-r"></span><span class="bd dot-y"></span><span class="bd dot-g"></span>
+          </div>
+          <span class="win-title">sysinfo — root@bt</span>
+        </div>
+        <div class="sysinfo-body">
+          <div class="si-block">
+            <div class="si-row"><span class="si-k">name</span><span class="si-sep">:</span><span class="si-v">Karan Bhateja</span></div>
+            <div class="si-row"><span class="si-k">role</span><span class="si-sep">:</span><span class="si-v">Cybersecurity Engineer</span></div>
+            <div class="si-row"><span class="si-k">focus</span><span class="si-sep">:</span><span class="si-v">Offensive Testing · Automation</span></div>
+          </div>
+          <div class="si-divider"></div>
+          <div class="si-block">
+            <div class="si-row"><span class="si-k">os</span><span class="si-sep">:</span><span class="si-v">BackTrack 5 R3 / Kali Linux</span></div>
+            <div class="si-row"><span class="si-k">shell</span><span class="si-sep">:</span><span class="si-v">/bin/bash — uid=0(root)</span></div>
+            <div class="si-row"><span class="si-k">lab</span><span class="si-sep">:</span><span class="si-v">Raspberry Pi Security Lab</span></div>
+          </div>
+          <div class="si-divider"></div>
+          <div class="si-block">
+            <div class="si-row"><span class="si-k">github</span><span class="si-sep">:</span><span class="si-v"><a href="https://github.com/karanbhateja" target="_blank" rel="noopener">github.com/karanbhateja</a></span></div>
+            <div class="si-row si-status-row"><span class="si-k">status</span><span class="si-sep">:</span><span class="si-v si-online">[+] Available</span></div>
+          </div>
+          <div class="si-divider"></div>
+          <div class="si-tags-block">
+            <div class="si-tags-label">[*] expertise :</div>
+            <div class="si-tags">
+              <span class="si-tag">Network Security</span>
+              <span class="si-tag">ISO 27001</span>
+              <span class="si-tag">Pen Testing</span>
+              <span class="si-tag">Automation</span>
+              <span class="si-tag">Linux Hardening</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── Skills ────────────────────────────────────────────────────────────────── -->
+<section class="s-section s-skills" id="skills">
+  <div class="container">
+
+    <div class="sec-head" data-scroll="section">
+      <div class="sh-tag">[*] scan_02 ——————————————————————</div>
+      <h2 class="sh-cmd">nmap -sV --skills target<span class="sh-cur">_</span></h2>
+    </div>
+
+    <div class="nmap-wrapper" data-scroll="text-left">
+      <div class="nmap-header-bar">
+        <span class="nmap-cmd-line">[*] Starting skill scan on 127.0.0.1 (karan@bt)</span>
+        <span class="nmap-cmd-line">[*] Host is up (0.001s latency). Not shown: filtered.</span>
+      </div>
+
+      <div class="nmap-cols">
+
+        <div class="nmap-col" data-scroll="card:left">
+          <div class="nmap-col-head">
+            <span class="nc-port">PORT 22/tcp</span>
+            <span class="nc-state">OPEN</span>
+            <span class="nc-svc">Languages</span>
+          </div>
+          <div class="nmap-col-body">
+            <div class="sk-row">
+              <span class="sk-n">Python</span>
+              <div class="sk-bar"><div class="sk-fill" data-pct="90%"></div></div>
+              <span class="sk-p">90%</span>
+            </div>
+            <div class="sk-row">
+              <span class="sk-n">Bash/Shell</span>
+              <div class="sk-bar"><div class="sk-fill" data-pct="85%"></div></div>
+              <span class="sk-p">85%</span>
+            </div>
+            <div class="sk-row">
+              <span class="sk-n">PowerShell</span>
+              <div class="sk-bar"><div class="sk-fill" data-pct="65%"></div></div>
+              <span class="sk-p">65%</span>
+            </div>
+            <div class="sk-row">
+              <span class="sk-n">JavaScript</span>
+              <div class="sk-bar"><div class="sk-fill" data-pct="45%"></div></div>
+              <span class="sk-p">45%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nmap-col" data-scroll="card" data-scroll-delay="0.08">
+          <div class="nmap-col-head">
+            <span class="nc-port">PORT 443/tcp</span>
+            <span class="nc-state">OPEN</span>
+            <span class="nc-svc">Cybersecurity</span>
+          </div>
+          <div class="nmap-col-body">
+            <div class="sk-row">
+              <span class="sk-n">Network Security</span>
+              <div class="sk-bar"><div class="sk-fill" data-pct="85%"></div></div>
+              <span class="sk-p">85%</span>
+            </div>
+            <div class="sk-row">
+              <span class="sk-n">ISO 27001 Audits</span>
+              <div class="sk-bar"><div class="sk-fill" data-pct="80%"></div></div>
+              <span class="sk-p">80%</span>
+            </div>
+            <div class="sk-row">
+              <span class="sk-n">Sec. Automation</span>
+              <div class="sk-bar"><div class="sk-fill" data-pct="88%"></div></div>
+              <span class="sk-p">88%</span>
+            </div>
+            <div class="sk-row">
+              <span class="sk-n">Web Security</span>
+              <div class="sk-bar"><div class="sk-fill" data-pct="60%"></div></div>
+              <span class="sk-p">60%</span>
+            </div>
+            <div class="sk-row">
+              <span class="sk-n">Infra Hardening</span>
+              <div class="sk-bar"><div class="sk-fill" data-pct="82%"></div></div>
+              <span class="sk-p">82%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="nmap-col" data-scroll="card:right" data-scroll-delay="0.16">
+          <div class="nmap-col-head">
+            <span class="nc-port">PORT 4444/tcp</span>
+            <span class="nc-state">OPEN</span>
+            <span class="nc-svc">Tools</span>
+          </div>
+          <div class="nmap-col-body">
+            <div class="tools-detected">[*] Detected tools &amp; platforms:</div>
+            <div class="bt-chips">
+              <span class="bt-chip">Kali Linux</span>
+              <span class="bt-chip">Nmap</span>
+              <span class="bt-chip">OpenSSH</span>
+              <span class="bt-chip">Wireshark</span>
+              <span class="bt-chip">Metasploit</span>
+              <span class="bt-chip">Burp Suite</span>
+              <span class="bt-chip">Raspberry Pi</span>
+              <span class="bt-chip">Git / GitHub</span>
+              <span class="bt-chip">Docker</span>
+              <span class="bt-chip">Tmux</span>
+              <span class="bt-chip">cron / systemd</span>
+              <span class="bt-chip">Linux Server</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="nmap-footer-bar">
+        <span class="nmap-done">[*] Scan complete: 3 ports open, all services active and responding.</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── Projects ──────────────────────────────────────────────────────────────── -->
+<section class="s-section" id="projects">
+  <div class="container">
+
+    <div class="sec-head" data-scroll="section">
+      <div class="sh-tag">[*] scan_03 ——————————————————————</div>
+      <h2 class="sh-cmd">ls -la /root/projects/<span class="sh-cur">_</span></h2>
+    </div>
+
+    <!-- Featured: full width MSF console style -->
+    <div class="msf-card msf-featured" data-scroll="section">
+      <div class="msf-bar">
+        <div class="msf-dots">
+          <span class="bd dot-r"></span><span class="bd dot-y"></span><span class="bd dot-g"></span>
+        </div>
+        <span class="msf-path">msf6 exploit(<span class="msf-hl">iso27001&#8209;audit&#8209;toolkit</span>) &gt; info</span>
+        <a href="https://github.com/karanbhateja" target="_blank" rel="noopener" class="msf-src-link">⎇ source</a>
+      </div>
+      <div class="msf-body msf-body-featured">
+        <div class="msf-col-info">
+          <div class="msf-pid">[PROJECT-01 · FEATURED]</div>
+          <h3 class="msf-title">ISO 27001 Network Audit Toolkit</h3>
+          <p class="msf-desc">Automated internal network scanning toolkit for ISO 27001-style audits.
+          Includes live host discovery, service enumeration, and structured compliance
+          reporting — designed to make internal security audits faster and reproducible.</p>
+          <div class="msf-meta">
+            <div class="msf-meta-row"><span class="mmk">Module   </span><span class="mmv">exploit/multi/audit/iso27001_scanner</span></div>
+            <div class="msf-meta-row"><span class="mmk">Platform </span><span class="mmv">Linux, Windows</span></div>
+            <div class="msf-meta-row"><span class="mmk">Author   </span><span class="mmv">Karan Bhateja &lt;root@bt&gt;</span></div>
+          </div>
+        </div>
+        <div class="msf-col-side">
+          <div class="msf-hls-label">[*] Module highlights:</div>
+          <div class="msf-hls">
+            <div class="msf-hl-row">[+] Automated network discovery with structured reporting</div>
+            <div class="msf-hl-row">[+] Audit-ready output format for compliance teams</div>
+            <div class="msf-hl-row">[+] Designed for real internal security workflows</div>
+          </div>
+          <div class="msf-tags">
+            <span class="msf-tag">Python</span>
+            <span class="msf-tag">Nmap</span>
+            <span class="msf-tag">ISO 27001</span>
+            <span class="msf-tag">Automation</span>
+            <span class="msf-tag">Reporting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3-col project grid -->
+    <div class="projects-grid">
+
+      <div class="msf-card" data-scroll="card:left">
+        <div class="msf-bar">
+          <div class="msf-dots">
+            <span class="bd dot-r"></span><span class="bd dot-y"></span><span class="bd dot-g"></span>
+          </div>
+          <span class="msf-path">exploit(<span class="msf-hl">script&#8209;obfuscation</span>) &gt;</span>
+        </div>
+        <div class="msf-body">
+          <div class="msf-pid">[PROJECT-02]</div>
+          <h3 class="msf-title">Security Script Obfuscation &amp; Licensing</h3>
+          <p class="msf-desc">Cryptographic signing and license validation system for protecting proprietary security scripts from unauthorized use or redistribution.</p>
+          <div class="msf-hls">
+            <div class="msf-hl-row">[+] Cryptographic signing &amp; validation</div>
+            <div class="msf-hl-row">[+] Script protection &amp; obfuscation</div>
+          </div>
+          <div class="msf-tags">
+            <span class="msf-tag">Python</span>
+            <span class="msf-tag">Cryptography</span>
+            <span class="msf-tag">Licensing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="msf-card" data-scroll="card" data-scroll-delay="0.07">
+        <div class="msf-bar">
+          <div class="msf-dots">
+            <span class="bd dot-r"></span><span class="bd dot-y"></span><span class="bd dot-g"></span>
+          </div>
+          <span class="msf-path">auxiliary(<span class="msf-hl">rpi&#8209;seclab</span>) &gt;</span>
+        </div>
+        <div class="msf-body">
+          <div class="msf-pid">[PROJECT-03]</div>
+          <h3 class="msf-title">Raspberry Pi Security Lab</h3>
+          <p class="msf-desc">Custom lightweight security lab on Raspberry Pi for SSH tunneling, remote access, and network segmentation experiments with portable hardware.</p>
+          <div class="msf-hls">
+            <div class="msf-hl-row">[+] SSH tunneling &amp; remote access</div>
+            <div class="msf-hl-row">[+] Network isolation &amp; segmentation</div>
+          </div>
+          <div class="msf-tags">
+            <span class="msf-tag">Linux</span>
+            <span class="msf-tag">SSH</span>
+            <span class="msf-tag">Raspberry Pi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="msf-card" data-scroll="card:right" data-scroll-delay="0.14">
+        <div class="msf-bar">
+          <div class="msf-dots">
+            <span class="bd dot-r"></span><span class="bd dot-y"></span><span class="bd dot-g"></span>
+          </div>
+          <span class="msf-path">post(<span class="msf-hl">security&#8209;automation</span>) &gt;</span>
+          <a href="https://github.com/karanbhateja" target="_blank" rel="noopener" class="msf-src-link">⎇ src</a>
+        </div>
+        <div class="msf-body">
+          <div class="msf-pid">[PROJECT-04]</div>
+          <h3 class="msf-title">Security Automation Scripts</h3>
+          <p class="msf-desc">Collection of automation tools for cybersecurity workflows — network scanners, SSH utilities, and deployment scripts for common security tasks.</p>
+          <div class="msf-hls">
+            <div class="msf-hl-row">[+] Network scanners &amp; enumeration</div>
+            <div class="msf-hl-row">[+] SSH automation &amp; utilities</div>
+          </div>
+          <div class="msf-tags">
+            <span class="msf-tag">Bash</span>
+            <span class="msf-tag">Python</span>
+            <span class="msf-tag">Automation</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── Contact ───────────────────────────────────────────────────────────────── -->
+<section class="s-section s-contact" id="contact">
+  <div class="container">
+
+    <div class="sec-head" data-scroll="section">
+      <div class="sh-tag">[*] scan_04 ——————————————————————</div>
+      <h2 class="sh-cmd">ssh root@karan.bt -p 22<span class="sh-cur">_</span></h2>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="ssh-panel" data-scroll="text-left">
+        <div class="win-bar">
+          <div class="win-dots">
+            <span class="bd dot-r"></span><span class="bd dot-y"></span><span class="bd dot-g"></span>
+          </div>
+          <span class="win-title">ssh — root@karan.bt — bash</span>
+        </div>
+        <div class="ssh-body">
+          <div class="ssh-line ssh-cmd-l">root@bt:~# ssh root@karan.bt -p 22</div>
+          <div class="ssh-line ssh-info-l">The authenticity of host 'karan.bt' can't be established.</div>
+          <div class="ssh-line ssh-info-l">RSA key fingerprint: <span class="ssh-fp">de:ad:be:ef:ca:fe:ba:be:00:ff</span></div>
+          <div class="ssh-line ssh-prompt-l">Are you sure you want to continue connecting? <span class="ssh-ans">[yes]</span></div>
+          <div class="ssh-line ssh-ok-l">[+] Warning: Permanently added 'karan.bt' to known hosts.</div>
+          <div class="ssh-line ssh-ok-l">[+] Connection established. Welcome, root.</div>
+          <br/>
+          <div class="ssh-line ssh-info-l">Open to freelance work, security project collaboration,</div>
+          <div class="ssh-line ssh-info-l">and full-time opportunities in cybersecurity and tooling.</div>
+          <br/>
+          <div class="contact-links">
+            <a href="https://github.com/karanbhateja" target="_blank" rel="noopener" class="c-link">
+              <span class="cl-icon">[git]</span>
+              <div>
+                <span class="cl-label">GitHub</span>
+                <span class="cl-val">github.com/karanbhateja</span>
+              </div>
+            </a>
+            <a href="mailto:" class="c-link">
+              <span class="cl-icon">[mail]</span>
+              <div>
+                <span class="cl-label">Email</span>
+                <span class="cl-val">Available on request</span>
+              </div>
+            </a>
+          </div>
+          <div class="ssh-line ssh-prompt-end">root@karan.bt:~# <span class="win-blink">_</span></div>
+        </div>
+      </div>
+
+      <div class="win-panel contact-term-panel" data-scroll="text-right">
+        <div class="win-bar">
+          <div class="win-dots">
+            <span class="bd dot-r"></span><span class="bd dot-y"></span><span class="bd dot-g"></span>
+          </div>
+          <span class="win-title">&gt;_ interactive shell — root@bt</span>
+        </div>
+        <div class="win-body contact-win-body">
+          <p class="ct-desc">Explore my profile, run a fake network scan, or type
+            <code class="ct-code">help</code> to get started.</p>
+          <div class="bt-chips ct-chips">
+            <span class="bt-chip">help</span>
+            <span class="bt-chip">whoami</span>
+            <span class="bt-chip">projects</span>
+            <span class="bt-chip">skills</span>
+            <span class="bt-chip">scan</span>
+            <span class="bt-chip">banner</span>
+            <span class="bt-chip">contact</span>
+          </div>
+          <button class="bt-btn bt-btn-primary launch-terminal" style="width:100%;justify-content:center;margin-top:8px">
+            [shell] Launch Terminal
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ────────────────────────────────────────────────────────────────── -->
+<footer class="bt-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-prompt">root@bt:~#</span>
+      <span class="footer-text">© 2025 <span class="footer-hl">Karan Bhateja</span> — Forged on BackTrack 5 R3</span>
+      <div class="footer-links">
+        <a href="https://github.com/karanbhateja" target="_blank" rel="noopener">GitHub</a>
+        <a href="#home">top ↑</a>
+        <button class="launch-terminal footer-term-btn">&gt;_ shell</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── Terminal Modal ─────────────────────────────────────────────────────────── -->
+<div class="terminal-modal" id="terminalModal" role="dialog" aria-modal="true">
+  <div class="terminal-window">
+    <div class="term-titlebar">
+      <div class="term-dots">
+        <span class="term-dot dot-r" id="termClose"></span>
+        <span class="term-dot dot-y"></span>
+        <span class="term-dot dot-g"></span>
+      </div>
+      <span class="term-title-text">root@bt:~# — bash — 80×24</span>
+      <button class="term-close-btn" id="termCloseBtn" aria-label="Close">✕</button>
+    </div>
+    <div class="term-body" id="termBody">
+      <div id="termOutput"></div>
+    </div>
+    <div class="term-input-row">
+      <span class="term-input-prompt">root@bt:~#</span>
+      <input type="text" id="termInput" autocomplete="off" autocorrect="off"
+             autocapitalize="off" spellcheck="false" placeholder="type a command..." />
+    </div>
+  </div>
+</div>
+
+<script src="js/matrix.js"></script>
+<script src="js/terminal.js"></script>
+<script src="js/main.js"></script>
+<script src="js/scroll3d.js"></script>
+</body>
+</html>
